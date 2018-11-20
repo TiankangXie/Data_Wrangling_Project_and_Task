@@ -67,8 +67,8 @@ select A.*,B.* from txie.ICBP A
 inner join
 txie.Demo1 B
 on A.[ID] = B.[contactid] )AA
-where [ObservedTime] between DATEADD(week, 11, try_convert(date,[tri_enrollmentcompletedate])) and 
-DATEADD(week, 12, try_convert(date,[tri_enrollmentcompletedate]))
+where [ObservedTime] between DATEADD(week, 12, try_convert(date,[tri_enrollmentcompletedate])) and 
+DATEADD(week, 13, try_convert(date,[tri_enrollmentcompletedate]))
 --GROUP BY  [ID],[ObservedTime],[tri_enrollmentcompletedate]
 group by [ID]) t1
 inner Join
@@ -110,8 +110,8 @@ select t1.ID, t1.[12WKAverage], COALESCE(t2.[1WKAverage],0) as [1WKAverage]
 from (SELECT	 [ID] as 'ID',
 		 AVG([BPstatus]) as '12WKAverage'
 FROM  txie.MinCalc
-where [ObservedTime] between DATEADD(week, 11, try_convert(date,[NAMin])) and 
-DATEADD(week, 12, try_convert(date,[NAMin]))
+where [ObservedTime] between DATEADD(week, 12, try_convert(date,[NAMin])) and 
+DATEADD(week, 13, try_convert(date,[NAMin]))
 --GROUP BY  [ID],[ObservedTime],[tri_enrollmentcompletedate]
 group by [ID]) t1
 inner Join
