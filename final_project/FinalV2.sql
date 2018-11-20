@@ -1,3 +1,5 @@
+--exec sp_rename 'txie.ICBP.BPAlerts','BP_status';
+
 ALTER TABLE txie.ICBP
 ADD BPstatus int null;
 
